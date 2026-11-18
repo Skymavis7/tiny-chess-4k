@@ -8,7 +8,7 @@ A chess engine in a single `main.py` of 3,923 bytes, built for [make.fun](https:
 
 ## How it plays
 
-0x88 board, negamax with alpha-beta search to a fixed 60,000-node budget per move, quiescence over captures and promotions, a transposition table, MVV-LVA capture ordering with killer moves, and material + piece-square evaluation with bishop-pair and passed-pawn bonuses. Fully deterministic — no clock, no unseeded randomness — so a replayed trial plays the same moves.
+0x88 board, negamax with alpha-beta search to a fixed 80,000-node budget per move, quiescence over captures and promotions, a transposition table, MVV-LVA capture ordering with killer moves, and material + piece-square evaluation with bishop-pair and passed-pawn bonuses. Fully deterministic — no clock, no unseeded randomness — so a replayed trial plays the same moves. The node budget was raised from 60,000 to 80,000 after local timing showed headroom (average ~1.5 s/move, worst 3.6 s, against a 10 s limit).
 
 The readable source is packed as a `zlib` + base85 payload (allowed by the rules; payload and unpacker both count toward the 4,096 bytes).
 
